@@ -3,7 +3,8 @@ option optimize_for = SPEED;
 package pocket;
 
 message Request {
-  enum Type {
+  enum RequestType {
+    // Let us know you are a player
     AUTH  = 1;
 
     // These apply to `channels`
@@ -25,7 +26,7 @@ message Request {
     optional string name = 1;
   }
 
-  required Type type = 1;
+  required RequestType request_type = 1;
 
   optional Channel channel = 2;
   optional Auth auth = 4;
