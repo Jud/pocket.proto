@@ -1,0 +1,34 @@
+option optimize_for = SPEED;
+
+package pocket;
+
+message Request {
+  enum Type {
+    AUTH  = 1;
+
+    // These apply to `channels`
+    JOIN  = 2;
+    LEAVE = 3;
+
+    // This is a passthrough type
+    // Pocket will pass this to the server listeners
+    // for decoding
+    MESSAGE = 4;
+  }
+
+  message Auth {
+    optional string key = 1;
+    optional string verifier = 2;
+  }
+
+  message Channel {
+    optional string name = 1;
+  }
+
+  required Type type = 1;
+
+  optional Channel channel = 2;
+  optional Auth auth = 4;
+
+  extensions 100 to 199;
+}
