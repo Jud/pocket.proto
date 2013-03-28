@@ -1,0 +1,10 @@
+{
+  "author": "Jud Stephenson",
+  "name": "pocket.proto",
+  "version": "0.0.1",
+  "description": "Pocket protobuf definitions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jud/pocket.proto.git"
+  }
+}
